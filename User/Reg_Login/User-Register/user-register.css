@@ -1,0 +1,543 @@
+/* ==========================================================================
+   RuralBiz AI — Registration
+   Presentation only. No id, name, type or attribute of any form control
+   is altered, and no behaviour depends on this file.
+   ========================================================================== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #15803d;
+    --primary-hover: #126b33;
+    --head-text: #ffa500;
+    --head-txt: rgb(17, 93, 17);
+    --primary-dark: #0b4f2a;
+    --primary-light: #e8f5ec;
+    --primary-soft: #f2f9f4;
+    --text-heading: #0f172a;
+    --text-body: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --white: #ffffff;
+    --radius: 10px;
+    --radius-lg: 14px;
+    --shadow-card: 0 12px 34px rgba(15, 23, 42, .07);
+
+    --input-h: clamp(38px, 5vh, 46px);
+    --gap-v: clamp(9px, 1.5vh, 18px);
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    color: var(--text-body);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea {
+    font: inherit;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.auth-card {
+    display: flex;
+    min-height: 100vh;
+    background: var(--white);
+}
+
+/* ============================ HERO PANEL ============================ */
+.banner-wrapper {
+    position: relative;
+    flex: 1 1 50%;
+    min-width: 0;
+    overflow: hidden;
+    background: linear-gradient(160deg, #0b4f2a 0%, #15803d 45%, #86c79c 100%);
+}
+
+.banner-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.banner-overlay {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(16px, 2.4vh, 32px) clamp(20px, 2.2vw, 42px);
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, .80) 0%,
+            rgba(255, 255, 255, .34) 24%,
+            rgba(255, 255, 255, 0) 44%,
+            rgba(11, 79, 42, .30) 100%);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+}
+
+.brand-logo img{
+    height: 10vh;
+    width: 6vw;
+}
+
+.brand-text strong {
+    display: block;
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--head-text);
+}
+
+.brand-text strong em {
+    font-style: normal;
+    color: var(--head-txt);
+}
+
+.brand-text small {
+    font-size: 0.8rem;
+    color: #26402f;
+}
+
+.hero-card {
+    flex: 0 0 auto;
+    margin-top: auto;
+    display: flex;
+    align-items: stretch;
+    padding: clamp(12px, 2.2vh, 20px) clamp(14px, 2vw, 24px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, .6);
+    background: rgba(240, 249, 242, .93);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 14px 32px rgba(6, 45, 25, .16);
+}
+
+.hero-card .item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    color: #0b1f14;
+}
+
+.hero-card .item+.item {
+    border-left: 1px solid rgba(11, 79, 42, .15);
+}
+
+.hero-card .item i {
+    font-size: clamp(1.05rem, 2.6vh, 1.5rem);
+    color: var(--primary);
+}
+
+.hero-card .item span {
+    font-size: clamp(.7rem, 1.8vh, .85rem);
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* ============================ FORM PANEL ============================ */
+.forms-wrapper {
+    flex: 1 1 50%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 2.4vh, 30px) clamp(16px, 2.2vw, 32px);
+    background: var(--white);
+}
+
+.form-box {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+}
+
+.stepper {
+    list-style: none;
+    display: flex;
+    margin-bottom: clamp(10px, 2.2vh, 30px);
+}
+
+.stepper li {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.stepper li::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    width: 100%;
+    height: 1.5px;
+    background: var(--border-color);
+    z-index: 0;
+}
+
+.stepper li:last-child::before {
+    display: none;
+}
+
+.stepper li span {
+    position: relative;
+    z-index: 1;
+    width: clamp(22px, 3.6vh, 28px);
+    height: clamp(22px, 3.6vh, 28px);
+    border: 1.5px solid var(--border-color);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--text-muted);
+    display: grid;
+    place-items: center;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.stepper li small {
+    font-size: clamp(.68rem, 1.6vh, .8rem);
+    color: var(--text-muted);
+}
+
+.stepper li.active span {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+}
+
+.stepper li.active small {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ---------- heading ---------- */
+.form-head h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    color: var(--text-heading);
+}
+
+.subtitle {
+    margin-top: 4px;
+    font-size: clamp(.78rem, 1.75vh, .92rem);
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.step-card {
+    margin-top: 2vh;
+    height: 72vh;
+    width: 35vw;
+    padding: 1.7vw;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+
+.field {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 1.2vw;
+    align-items: start;
+}
+
+.field+.field {
+    margin-top: var(--gap-v);
+}
+
+.field-body {
+    display: contents;
+}
+
+/* label / input / hint become grid items */
+
+.field-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: 3vw;
+    height: 6vh;
+    margin-top: 3vh;
+    border-radius: 10px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    display: grid;
+    place-items: center;
+    font-size: clamp(.85rem, 2.1vh, 1.05rem);
+}
+
+.field-icon i{
+    font-size: 1.3rem;
+}
+
+.field-body>label {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.field-body>input {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: var(--input-h);
+    padding: 0 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius);
+    background: #fff;
+    font-size: clamp(.82rem, 1.85vh, .92rem);
+    color: var(--text-heading);
+    outline: none;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+.field-body>.field-select {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.field-body>.field-hint {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.field-body>input::placeholder {
+    color: #94a3b8;
+}
+
+.field-body>input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, .13);
+}
+
+.field-body>input:read-only {
+    background: #f7faf8;
+    color: var(--text-muted);
+}
+
+.field-hint {
+    margin-top: 3px;
+    font-size: clamp(.66rem, 1.5vh, .76rem);
+    line-height: 1.35;
+    color: var(--text-muted);
+}
+
+.pill-verified {
+    font-style: normal;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: .62rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.field-select {
+    position: relative;
+}
+
+.field-select select {
+    width: 100%;
+    height: var(--input-h);
+    appearance: none;
+    padding: 0 44px 0 16px;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius);
+    background: #fff;
+    font-size: clamp(.82rem, 1.85vh, .92rem);
+    color: var(--text-heading);
+    outline: none;
+    cursor: pointer;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+.field-select select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, .13);
+}
+
+.field-select i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: .8rem;
+    pointer-events: none;
+}
+
+.submit-btn {
+    width: 100%;
+    height: 7vh;
+    margin-top: clamp(10px, 2vh, 22px);
+    border: none;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background .2s;
+}
+
+.submit-btn::after {
+    content: "\2192";
+    font-size: 1.1rem;
+    transition: transform .2s;
+}
+
+.submit-btn:hover {
+    background: var(--primary-hover);
+}
+
+.submit-btn:hover::after {
+    transform: translateX(4px);
+}
+
+.submit-btn:disabled {
+    opacity: .7;
+    cursor: progress;
+}
+
+.switch-footer {
+    margin-top: clamp(6px, 1.2vh, 14px);
+    text-align: center;
+    font-size: clamp(.72rem, 1.65vh, .82rem);
+    color: var(--text-muted);
+}
+
+.switch-footer a {
+    font-weight: 600;
+}
+
+/* ==================== APP SHELL : never page-scrolls ==================== */
+@media (min-width: 901px) {
+    html, body {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .auth-card {
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .banner-wrapper {
+        height: 100%;
+    }
+
+    .banner-overlay {
+        overflow: hidden;
+    }
+
+    .forms-wrapper {
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        align-items: flex-start;
+        overscroll-behavior: contain;
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: #cbd5e1 transparent;
+    }
+
+    .forms-wrapper::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .forms-wrapper::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .forms-wrapper::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 99px;
+    }
+
+    .form-box {
+        margin-block: auto;
+    }
+}
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width: 900px) {
+    .auth-card {
+        flex-direction: column;
+    }
+
+    .banner-wrapper {
+        flex: none;
+        min-height: 240px;
+    }
+
+    .hero-card {
+        margin-top: auto;
+    }
+
+    .forms-wrapper {
+        padding: 24px 20px 40px;
+    }
+}
+
+@media (max-width: 560px) {
+    .step-card {
+        padding: 16px 14px;
+    }
+
+    .field {
+        column-gap: 12px;
+    }
+
+    .field-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+
+    .stepper li small {
+        font-size: .7rem;
+    }
+}

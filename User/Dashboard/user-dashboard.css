@@ -33,6 +33,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+
 /* =========================================================
 SIDEBAR
 ========================================================= */
@@ -59,6 +60,7 @@ SIDEBAR
     display: none;
 }
 
+
 /* =========================================================
 BRAND
 ========================================================= */
@@ -77,10 +79,12 @@ BRAND
     height: 88px;
     border-radius: 50%;
     background:
-        radial-gradient(circle at 50% 45%,
+        radial-gradient(
+            circle at 50% 45%,
             #ffffff 0%,
             #e9f6e8 65%,
-            #c9e5c7 100%);
+            #c9e5c7 100%
+        );
     border: 4px solid #2f9b39;
     display: flex;
     align-items: center;
@@ -96,25 +100,58 @@ BRAND
     object-fit: contain;
 }
 
-.brand h1 {
-    margin-top: 9px;
-    font-size: 22px;
-    color: #075f1b;
-    font-weight: 700;
+/* =========================================================
+   KISAN MITRA SIDEBAR BRAND
+========================================================= */
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-.brand p {
-    margin-top: 5px;
-    font-size: 11px;
-    color: #555;
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
 }
+
+.brand-heading {
+    font-family: "Baloo 2", sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.8px;
+    white-space: nowrap;
+}
+
+.brand-green {
+    color: #23b55b;
+}
+
+.brand-orange {
+    color: #f39a0b;
+}
+
+.brand-tagline {
+    margin-top: 5px;
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+    color: white;
+    white-space: nowrap;
+}
+
 
 /* =========================================================
 NAVIGATION
 ========================================================= */
-
-.navigation {
-    padding: 2.5vh 1vw;
+.navigation{
+    margin-top: 2vh;
 }
 
 .nav-item {
@@ -156,6 +193,7 @@ NAVIGATION
     color: var(--green);
 }
 
+
 /* =========================================================
 SIDEBAR BOTTOM
 ========================================================= */
@@ -166,6 +204,7 @@ SIDEBAR BOTTOM
     padding: 30px 17px 22px;
 }
 
+
 /* =========================================================
 MAIN CONTENT
 ========================================================= */
@@ -174,6 +213,7 @@ MAIN CONTENT
     margin-left: 17vw;
     min-height: 100vh;
 }
+
 
 /* =========================================================
 TOPBAR
@@ -194,6 +234,7 @@ TOPBAR
     align-items: center;
     gap: 30px;
 }
+
 
 /* =========================================================
 NOTIFICATION
@@ -228,6 +269,7 @@ NOTIFICATION
     font-weight: 600;
 }
 
+
 /* =========================================================
 NOTIFICATION DROPDOWN
 ========================================================= */
@@ -261,9 +303,8 @@ NOTIFICATION DROPDOWN
         opacity: 1;
         transform: translateY(0);
     }
-
-
 }
+
 
 /* =========================================================
 NOTIFICATION HEADER
@@ -303,6 +344,7 @@ NOTIFICATION HEADER
     text-decoration: underline;
 }
 
+
 /* =========================================================
 NOTIFICATION ITEM
 ========================================================= */
@@ -321,6 +363,7 @@ NOTIFICATION ITEM
 .notification-item:hover {
     background: #f7faf7;
 }
+
 
 /* Notification Icon */
 
@@ -350,6 +393,7 @@ NOTIFICATION ITEM
     color: #e6a000;
 }
 
+
 /* Notification Content */
 
 .notification-content {
@@ -374,6 +418,7 @@ NOTIFICATION ITEM
     color: #999999;
 }
 
+
 /* =========================================================
 UNREAD DOT
 ========================================================= */
@@ -388,6 +433,7 @@ UNREAD DOT
     background: #299138;
 }
 
+
 /* =========================================================
 READ NOTIFICATION
 ========================================================= */
@@ -400,6 +446,7 @@ READ NOTIFICATION
 .notification-item.read .unread-dot {
     display: none;
 }
+
 
 /* =========================================================
 NOTIFICATION FOOTER
@@ -432,6 +479,7 @@ NOTIFICATION FOOTER
     text-decoration: underline;
 }
 
+
 /* =========================================================
 PROFILE
 ========================================================= */
@@ -453,7 +501,7 @@ PROFILE
     justify-content: flex-start;
 }
 
-.profile-btn>i {
+.profile-btn > i {
     margin-left: auto;
     font-size: 12px;
     color: #555;
@@ -470,6 +518,7 @@ PROFILE
     color: #168127;
     font-size: 16px;
 }
+
 
 /* =========================================================
 PROFILE DROPDOWN
@@ -508,6 +557,7 @@ PROFILE DROPDOWN
     color: var(--green);
 }
 
+
 /* =========================================================
 DASHBOARD
 ========================================================= */
@@ -515,6 +565,7 @@ DASHBOARD
 .dashboard {
     padding: 24px 35px 30px;
 }
+
 
 /* =========================================================
 WELCOME
@@ -543,70 +594,6 @@ WELCOME
     font-size: 15px;
 }
 
-/* =========================================================
-STATISTICS
-========================================================= */
-
-.stats-card {
-    margin-top: 2vh;
-    width: 1205px;
-    min-height: 85px;
-    border: 1px solid #e2e6e2;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
-}
-
-.stat {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 0 17px;
-}
-
-.stat-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 21px;
-}
-
-.green-light {
-    background: #eff8ef;
-    color: #288c35;
-}
-
-.yellow-light {
-    background: #fff8e9;
-    color: #eba500;
-}
-
-.blue-light {
-    background: #edf8fc;
-    color: #0788ca;
-}
-
-.stat p {
-    font-size: 12px;
-    margin-bottom: 5px;
-    white-space: nowrap;
-}
-
-.stat strong {
-    font-size: 21px;
-    font-weight: 600;
-}
-
-.stat-divider {
-    height: 52px;
-    width: 1px;
-    background: #e1e4e1;
-}
 
 /* =========================================================
 GRID
@@ -617,6 +604,7 @@ GRID
     grid-template-columns: 1.08fr 0.92fr;
     gap: 18px 25px;
 }
+
 
 /* =========================================================
 CARD
@@ -632,9 +620,11 @@ CARD
 
 .card-header {
     height: 47px;
-    background: linear-gradient(to right,
-            #f7fbf7,
-            #ffffff);
+    background: linear-gradient(
+        to right,
+        #f7fbf7,
+        #ffffff
+    );
     border-bottom: 1px solid #dfe7df;
     display: flex;
     align-items: center;
@@ -651,6 +641,7 @@ CARD
     margin-right: 10px;
     font-size: 16px;
 }
+
 
 /* =========================================================
 BOOKING CARD
@@ -716,6 +707,7 @@ BOOKING CARD
     font-weight: 600;
 }
 
+
 /* =========================================================
 TOKEN
 ========================================================= */
@@ -740,6 +732,7 @@ TOKEN
     color: #096d20;
     font-weight: 600;
 }
+
 
 /* =========================================================
 BOOKING BUTTONS
@@ -786,6 +779,7 @@ BOOKING BUTTONS
 .primary-btn:hover {
     background: #1c7528;
 }
+
 
 /* =========================================================
 LIVE QUEUE
@@ -839,6 +833,7 @@ LIVE QUEUE
 .queue-button:hover {
     background: #eff8ef;
 }
+
 
 /* =========================================================
 PROCUREMENT STATUS
@@ -929,6 +924,7 @@ PROCUREMENT STATUS
     color: #147326;
 }
 
+
 /* =========================================================
 RECENT ACTIVITY
 ========================================================= */
@@ -981,6 +977,7 @@ RECENT ACTIVITY
     color: #656565;
 }
 
+
 /* =========================================================
 QUICK ACTIONS
 ========================================================= */
@@ -1017,6 +1014,10 @@ QUICK ACTIONS
     cursor: pointer;
     transition: 0.2s;
     position: relative;
+
+    /* Required because quick cards are now anchor tags */
+    text-decoration: none;
+    color: inherit;
 }
 
 .quick-green {
@@ -1075,11 +1076,12 @@ QUICK ACTIONS
     color: #575757;
 }
 
-.quick-card>i {
+.quick-card > i {
     margin-left: auto;
     margin-right: 4px;
     font-size: 15px;
 }
+
 
 /* =========================================================
 MOBILE HEADER
@@ -1094,6 +1096,7 @@ MOBILE HEADER
     align-items: center;
     gap: 14px;
 }
+
 
 /* =========================================================
 MOBILE PROFILE
@@ -1126,6 +1129,7 @@ MOBILE PROFILE
     justify-content: center;
     font-size: 14px;
 }
+
 
 /* =========================================================
 MOBILE PROFILE DROPDOWN
@@ -1164,6 +1168,7 @@ MOBILE PROFILE DROPDOWN
     color: #08721d;
 }
 
+
 /* =========================================================
 MOBILE NOTIFICATION
 ========================================================= */
@@ -1201,6 +1206,7 @@ MOBILE NOTIFICATION
     justify-content: center;
 }
 
+
 /* =========================================================
 MOBILE MENU
 ========================================================= */
@@ -1219,12 +1225,12 @@ MOBILE MENU
     color: #222;
 }
 
+
 /* =========================================================
 RESPONSIVE 1250px
 ========================================================= */
 
 @media (max-width: 1250px) {
-
 
     .stats-card {
         width: 600px;
@@ -1249,9 +1255,8 @@ RESPONSIVE 1250px
         padding-left: 25px;
         padding-right: 25px;
     }
-
-
 }
+
 
 /* =========================================================
 RESPONSIVE 1050px
@@ -1279,8 +1284,8 @@ RESPONSIVE 1050px
     .dashboard-grid {
         grid-template-columns: 1fr;
     }
-
 }
+
 
 /* =========================================================
 RESPONSIVE 750px
@@ -1288,6 +1293,12 @@ RESPONSIVE 750px
 
 @media (max-width: 750px) {
 
+    .notification-dropdown {
+        position: fixed;
+        top: 70px;
+        right: 8px;
+        width: min(380px, calc(100vw - 24px));
+    }
     /* Sidebar */
 
     .sidebar {
@@ -1465,9 +1476,8 @@ RESPONSIVE 750px
         margin-left: auto;
         margin-right: auto;
     }
-
-
 }
+
 
 /* =========================================================
 RESPONSIVE 450px
@@ -1475,9 +1485,10 @@ RESPONSIVE 450px
 
 @media (max-width: 450px) {
 
-    .brand{
+    .brand {
         padding-top: 8vh;
     }
+
     .mobile-header {
         padding: 10px;
     }
@@ -1535,8 +1546,9 @@ RESPONSIVE 450px
     }
 }
 
+
 /* =========================================================
-   MY BOOKINGS
+MY BOOKINGS
 ========================================================= */
 
 .my-bookings-page {
@@ -1555,211 +1567,157 @@ RESPONSIVE 450px
     font-size: 14px;
 }
 
-
 .my-booking-card {
     margin-top: 25px;
-
     background: white;
-
     border: 1px solid #e1e6e2;
-
     border-radius: 12px;
-
     overflow: hidden;
 }
 
-
 .booking-card-header {
     padding: 20px;
-
     background: #f5faf6;
-
     border-bottom: 1px solid #e1e6e2;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
 }
-
 
 .booking-card-header span,
 .booking-token small {
     display: block;
-
     font-size: 11px;
-
     color: #888;
-
     margin-bottom: 5px;
 }
 
-
 .booking-card-header strong {
     color: #07883f;
-
     font-size: 14px;
 }
-
 
 .booking-token {
     text-align: right;
 }
-
 
 .booking-token strong {
     font-size: 22px;
     color: #07883f;
 }
 
-
 .booking-card-body {
-
     padding: 22px;
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 20px;
 }
 
-
 .booking-detail {
-
     display: flex;
-
     align-items: center;
-
     gap: 13px;
-
     padding: 14px;
-
     border: 1px solid #e5e9e6;
-
     border-radius: 8px;
 }
 
-
-.booking-detail>i {
-
+.booking-detail > i {
     width: 35px;
     height: 35px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     background: #edf7ef;
-
     color: #07883f;
 }
 
-
 .booking-detail small {
-
     display: block;
-
     color: #888;
-
     font-size: 10px;
-
     margin-bottom: 4px;
 }
 
-
 .booking-detail strong {
-
     display: block;
-
     font-size: 13px;
-
     color: #333;
 }
 
-
 .booking-card-footer {
-
     padding: 15px 20px;
-
     border-top: 1px solid #edf0ee;
-
     background: #fafcfb;
 }
 
-
 .booking-card-footer span {
-
     color: #07883f;
-
     font-size: 12px;
-
     font-weight: 600;
 }
 
 
 /* =========================================================
-   NO BOOKINGS
+NO BOOKINGS
 ========================================================= */
 
 .no-booking {
-
     margin-top: 30px;
-
     padding: 60px 20px;
-
     text-align: center;
-
     background: white;
-
     border: 1px solid #e1e6e2;
-
     border-radius: 12px;
 }
 
-
 .no-booking i {
-
     font-size: 40px;
-
     color: #b8c2bb;
-
     margin-bottom: 15px;
 }
 
-
 .no-booking h2 {
-
     font-size: 20px;
-
     margin-bottom: 8px;
 }
 
-
 .no-booking p {
-
     color: #888;
-
     font-size: 13px;
 }
 
 
 /* =========================================================
-   MOBILE
+MOBILE
 ========================================================= */
 
-@media (max-width: 700px) {
-
-    .my-bookings-page {
-        padding: 20px;
+@media (max-width: 750px) {
+    .mobile-header .notification-dropdown {
+        position: fixed;
+        top: 70px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-width: calc(100vw - 24px);
     }
 
-    .booking-card-body {
-        grid-template-columns: 1fr;
+    .quick-actions {
+        width: 100%;
+        max-width: none;
+    }
+
+    .quick-grid {
+        grid-template-columns: 1fr;  /* one full-width card per row */
+        gap: 12px;
+    }
+
+    .quick-card {
+        width: 100%;
+        max-width: none;
     }
 
 }
+
+

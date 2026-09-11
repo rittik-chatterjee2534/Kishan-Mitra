@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>RuralProcure Dashboard</title>
+    <title>Kisan Mitra - Dashboard</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -21,6 +21,19 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- CSS -->
     <link rel="stylesheet" href="user-dashboard.css" />
     <link rel="stylesheet" href="Pages/book-new-slot/book-new-slot.css" />
@@ -28,8 +41,8 @@
 
   <body>
     <!-- =====================================================
-     MOBILE HEADER
-====================================================== -->
+         MOBILE HEADER
+    ====================================================== -->
 
     <header class="mobile-header">
       <!-- Logo -->
@@ -60,6 +73,7 @@
           </button>
 
           <!-- Mobile Notification Dropdown -->
+
           <div class="notification-dropdown" id="mobileNotificationDropdown">
             <div class="notification-header">
               <div>
@@ -76,6 +90,7 @@
             </div>
 
             <!-- Notification 1 -->
+
             <div class="notification-item unread" data-notification-id="1">
               <div class="notification-item-icon green-notification">
                 <i class="fa-regular fa-calendar-check"></i>
@@ -96,6 +111,7 @@
             </div>
 
             <!-- Notification 2 -->
+
             <div class="notification-item unread" data-notification-id="2">
               <div class="notification-item-icon blue-notification">
                 <i class="fa-solid fa-users"></i>
@@ -116,6 +132,7 @@
             </div>
 
             <!-- Notification 3 -->
+
             <div class="notification-item unread" data-notification-id="3">
               <div class="notification-item-icon yellow-notification">
                 <i class="fa-solid fa-indian-rupee-sign"></i>
@@ -166,7 +183,7 @@
               Settings
             </div>
 
-            <div>
+            <div id="user-logout">
               <i class="fa-solid fa-arrow-right-from-bracket"></i>
               Logout
             </div>
@@ -187,53 +204,59 @@
     </header>
 
     <!-- =====================================================
-     SIDEBAR
-====================================================== -->
+         SIDEBAR
+    ====================================================== -->
 
     <aside class="sidebar" id="sidebar">
       <!-- Logo -->
 
+      <!-- Logo / Brand -->
+
       <div class="brand">
         <div class="logo-circle">
-          <img src="../Images/logo.png" alt="RuralProcure Logo" />
+          <img
+            src="../Images/logo.png"
+            alt="RuralProcure Logo"
+            draggable="false" />
+         
         </div>
 
-        <h1>RuralProcure</h1>
+        <div class="brand-text">
+          <div class="brand-heading">
+            <span class="brand-green">Kisan</span
+            ><span class="brand-orange">Mitra</span>
+          </div>
 
-        <p>Better Price. Better Future.</p>
+          <div class="brand-tagline">Your Procurement Partner</div>
+        </div>
       </div>
 
       <!-- Main Navigation -->
 
       <nav class="navigation">
-        <a href="#" class="nav-item active" id="Home">
+        <a href="user-dashboard.html" class="nav-item active">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
         </a>
 
-        <a href="#" class="nav-item" id="bookNewSlot">
+        <a href="Pages/book-new-slot/book-new-slot.html" class="nav-item">
           <i class="fa-regular fa-calendar"></i>
           <span>Book New Slot</span>
         </a>
 
-        <a href="#" class="nav-item" id="myBookings">
+        <a href="Pages/User-My-bookings/my-bookings.html" class="nav-item">
           <i class="fa-regular fa-clipboard"></i>
           <span>My Bookings</span>
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="Pages/live-queue/live-queue.html" class="nav-item">
           <i class="fa-solid fa-users"></i>
           <span>Live Queue</span>
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="Pages/User-Payments/payments.html" class="nav-item">
           <i class="fa-solid fa-indian-rupee-sign"></i>
           <span>Payments</span>
-        </a>
-
-        <a href="#" class="nav-item">
-          <i class="fa-regular fa-bell"></i>
-          <span>Notifications</span>
         </a>
       </nav>
 
@@ -242,15 +265,15 @@
       <div class="sidebar-bottom">
         <a href="#" class="nav-item">
           <i class="fa-regular fa-circle-question"></i>
-          <span>Help & Support</span>
+          <span>Help &amp; Support</span>
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="Pages/User-Settings/user-settings.html" class="nav-item">
           <i class="fa-regular fa-circle-user"></i>
-          <span>Profile</span>
+          <span>Settings</span>
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="#" class="nav-item" id="user-logout">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
           <span>Logout</span>
         </a>
@@ -258,13 +281,13 @@
     </aside>
 
     <!-- =====================================================
-     MAIN CONTENT
-====================================================== -->
+         MAIN CONTENT
+    ====================================================== -->
 
     <main class="main-content" id="main-content">
       <!-- =================================================
-         TOP BAR
-    ================================================== -->
+           TOP BAR
+      ================================================== -->
 
       <header class="topbar">
         <div></div>
@@ -402,8 +425,8 @@
       </header>
 
       <!-- =================================================
-         DASHBOARD
-    ================================================== -->
+           DASHBOARD
+      ================================================== -->
 
       <section class="dashboard" id="user-dashboard">
         <!-- ================= WELCOME + STATS ================= -->
@@ -411,7 +434,7 @@
         <div class="welcome-row">
           <div class="welcome">
             <h2>
-              Good morning, Ramesh!
+              Welcome, Ramesh!
               <span>👋</span>
             </h2>
 
@@ -424,44 +447,62 @@
             <div class="quick-title">QUICK ACTIONS</div>
 
             <div class="quick-grid">
-              <button class="quick-card quick-green" type="button">
+              <!-- BOOK NEW SLOT -->
+
+              <a
+                href="./Pages/book-new-slot/book-new-slot.html"
+                class="quick-card quick-green"
+              >
                 <div class="quick-icon">
                   <i class="fa-regular fa-calendar"></i>
                 </div>
 
-                <div class="quick-text" id="bookNewSlot">
+                <div class="quick-text">
                   <h3>Book New Slot</h3>
+
                   <p>Book a new slot for your produce</p>
                 </div>
 
                 <i class="fa-solid fa-chevron-right"></i>
-              </button>
+              </a>
 
-              <button class="quick-card quick-blue" type="button">
+              <!-- MY BOOKINGS -->
+
+              <a
+                href="./Pages/User-My-Bookings/my-bookings.html"
+                class="quick-card quick-blue"
+              >
                 <div class="quick-icon">
                   <i class="fa-regular fa-clipboard"></i>
                 </div>
 
                 <div class="quick-text">
                   <h3>My Bookings</h3>
+
                   <p>View all your bookings</p>
                 </div>
 
                 <i class="fa-solid fa-chevron-right"></i>
-              </button>
+              </a>
 
-              <button class="quick-card quick-yellow" type="button">
+              <!-- PAYMENTS -->
+
+              <a
+                href="./Pages/User-Payments/payments.html"
+                class="quick-card quick-yellow"
+              >
                 <div class="quick-icon">
                   <i class="fa-solid fa-indian-rupee-sign"></i>
                 </div>
 
                 <div class="quick-text">
                   <h3>Payments</h3>
+
                   <p>View payment history and status</p>
                 </div>
 
                 <i class="fa-solid fa-chevron-right"></i>
-              </button>
+              </a>
             </div>
           </section>
         </div>
@@ -641,7 +682,7 @@
               </div>
 
               <div class="info-message">
-                <i class="fa-regular fa-circle-info"></i>
+                <i class="bi bi-truck"></i>
 
                 <span>
                   Your produce is being procured. Please wait for your token to
@@ -699,63 +740,12 @@
             </div>
           </section>
         </div>
-
-        <!-- ================= STATISTICS ================= -->
-
-<div class="stats-card">
-
-  <div class="stat">
-
-    <div class="stat-icon green-light">
-      <i class="fa-regular fa-calendar"></i>
-    </div>
-
-    <div>
-      <p>Upcoming Booking</p>
-      <strong>1</strong>
-    </div>
-
-  </div>
-
-
-  <div class="stat-divider"></div>
-
-
-  <div class="stat">
-
-    <div class="stat-icon green-light">
-      <i class="fa-regular fa-circle-check"></i>
-    </div>
-
-    <div>
-      <p>Completed</p>
-      <strong>4</strong>
-    </div>
-
-  </div>
-
-
-  <div class="stat-divider"></div>
-
-
-  <div class="stat">
-
-    <div class="stat-icon yellow-light">
-      <i class="fa-solid fa-indian-rupee-sign"></i>
-    </div>
-
-    <div>
-      <p>Pending Payment</p>
-      <strong>₹14,400</strong>
-    </div>
-
-  </div>
-
-</div>
       </section>
     </main>
 
     <!-- JavaScript -->
+
     <script src="user-dashboard.js"></script>
   </body>
 </html>
+```

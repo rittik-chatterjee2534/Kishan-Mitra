@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="queue-management.css" />
+
+    <title>Live Queue Management | RuralProcure</title>
+  </head>
+
+  <body>
+    <div class="dashboard-layout">
+      <aside class="sidebar">
+        <div class="sidebar-header">
+          <a
+            href="../Dashboard/centre-admin-dashboard.html"
+            class="sidebar-brand"
+          >
+            <img
+              src="../../Images/logo.png"
+              alt="RuralProcure logo"
+              class="sidebar-logo"
+            />
+            <div class="brand-details">
+              <h1>RuralProcure</h1>
+              <span>Centre Admin Portal</span>
+            </div>
+          </a>
+          <button
+            type="button"
+            aria-label="Close sidebar"
+            class="sidebar-close"
+          >
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <nav class="sidebar-nav" aria-label="Centre admin navigation">
+          <div class="nav-group">
+            <p class="nav-group-title">Overview</p>
+
+            <ul class="nav-list">
+              <li>
+                <a
+                  href="../Dashboard/centre-admin-dashboard.html"
+                  class="nav-link"
+                >
+                  <i data-lucide="layout-dashboard" aria-hidden="true"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-link">
+                  <i data-lucide="warehouse" aria-hidden="true"></i>
+                  <span>My Centre</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">Operations</p>
+
+            <ul class="nav-list">
+              <li>
+                <a
+                  href="../Slot_Management/slot-management.html"
+                  class="nav-link"
+                >
+                  <i data-lucide="calendar-days" aria-hidden="true"></i>
+                  <span>Slot Management</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="../Bookings/booking-operations.html" class="nav-link">
+                  <i data-lucide="clipboard-list" aria-hidden="true"></i>
+                  <span>Bookings</span>
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="./queue-management.html"
+                  class="nav-link active"
+                  aria-current="page"
+                >
+                  <i data-lucide="list-ordered" aria-hidden="true"></i>
+                  <span>Live Queue</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="../Procurements/procurement-operations.html" class="nav-link">
+                  <i data-lucide="package-check" aria-hidden="true"></i>
+                  <span>Procurements</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="../Payments/payments.html" class="nav-link">
+                  <i data-lucide="indian-rupee" aria-hidden="true"></i>
+                  <span>Payments</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-group">
+            <p class="nav-group-title">System</p>
+
+            <ul class="nav-list">
+              <li>
+                <a href="../Reports/reports.html" class="nav-link">
+                  <i
+                    data-lucide="chart-no-axes-combined"
+                    aria-hidden="true"
+                  ></i>
+                  <span>Centre Reports</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-link">
+                  <i data-lucide="bell" aria-hidden="true"></i>
+                  <span>Notifications</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="nav-link">
+                  <i data-lucide="settings" aria-hidden="true"></i>
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <footer class="sidebar-footer">
+          <!--Sidebar Footer-->
+          <button
+            type="button"
+            class="admin-profile"
+            aria-label="Open admin menu"
+            aria-expanded="false"
+          >
+            <div class="admin-avatar">
+              <i data-lucide="user-round" aria-hidden="true"></i>
+            </div>
+            <div class="admin-details">
+              <strong>Centre Admin</strong>
+              <span>Krishnanagar Centre</span>
+            </div>
+            <i
+              data-lucide="chevron-down"
+              class="profile-chevron"
+              aria-hidden="true"
+            ></i>
+          </button>
+        </footer>
+      </aside>
+
+      <div class="sidebar-overlay" aria-hidden="true"></div>
+
+      <div class="dashboard-main">
+        <header class="top-navbar">
+          <!--Top Navbar-->
+          <div class="navbar-left">
+            <!--Top Navbar Left-->
+            <button
+              type="button"
+              class="sidebar-toggle"
+              aria-label="Open sidebar"
+              aria-expanded="false"
+            >
+              <i data-lucide="menu" aria-hidden="true"></i>
+            </button>
+
+            <div class="welcome-text page-heading">
+              <h2>Live Queue Management</h2>
+
+              <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../Dashboard/centre-admin-dashboard.html">Dashboard</a>
+                <i data-lucide="chevron-right" aria-hidden="true"></i>
+                <span>Live Queue Management</span>
+              </nav>
+            </div>
+          </div>
+          <div class="navbar-right">
+            <!--Top Navbar Right-->
+            <button
+              type="button"
+              class="date-selector"
+              aria-label="Select dashboard date"
+            >
+              <i data-lucide="calendar-days" aria-hidden="true"></i>
+              <time id="dashboard-date" datetime="2026-08-28">
+                Aug 28, 2026
+              </time>
+              <i data-lucide="chevron-down" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="notification-button"
+              aria-label="View 4 unread notifications"
+              aria-expanded="false"
+              aria-controls="notification-panel"
+            >
+              <i data-lucide="bell" aria-hidden="true"></i>
+              <span class="notification-badge">4</span>
+            </button>
+            <div class="notification-panel" id="notification-panel" hidden>
+              <div class="notification-panel-header">
+                <h3>Notifications</h3>
+                <button type="button" class="mark-read-button">
+                  Mark all as read
+                </button>
+              </div>
+
+              <ul class="notification-list">
+                <li class="notification-item unread">
+                  <span class="notification-icon">
+                    <i data-lucide="calendar-check" aria-hidden="true"></i>
+                  </span>
+
+                  <div class="notification-content">
+                    <strong>New slot booking</strong>
+                    <p>Ramesh Kumar booked a slot at Sehore Centre.</p>
+                    <time datetime="2026-08-28T21:15">5 minutes ago</time>
+                  </div>
+                </li>
+                <li class="notification-item unread">
+                  <span class="notification-icon">
+                    <i data-lucide="package-check" aria-hidden="true"></i>
+                  </span>
+
+                  <div class="notification-content">
+                    <strong>Procurement completed</strong>
+                    <p>Procurement #RP-1024 was completed at Sehore Centre.</p>
+                    <time datetime="2026-08-28T21:02">18 minutes ago</time>
+                  </div>
+                </li>
+                <li class="notification-item unread">
+                  <span class="notification-icon">
+                    <i data-lucide="indian-rupee" aria-hidden="true"></i>
+                  </span>
+
+                  <div class="notification-content">
+                    <strong>Payment requires review</strong>
+                    <p>
+                      Payment for procurement #RP-1018 is awaiting approval.
+                    </p>
+                    <time datetime="2026-08-28T20:45">35 minutes ago</time>
+                  </div>
+                </li>
+                <li class="notification-item unread">
+                  <span class="notification-icon">
+                    <i data-lucide="warehouse" aria-hidden="true"></i>
+                  </span>
+
+                  <div class="notification-content">
+                    <strong>Centre capacity update</strong>
+                    <p>Bhopal Rural Centre reached 90% daily capacity.</p>
+                    <time datetime="2026-08-28T20:20">1 hour ago</time>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <button
+              type="button"
+              class="navbar-profile"
+              aria-label="Open admin profile menu"
+              aria-controls="profile-menu"
+              aria-expanded="false"
+            >
+              <span class="navbar-avatar">
+                <i data-lucide="user-round" aria-hidden="true"></i>
+              </span>
+            </button>
+            <div class="profile-menu" id="profile-menu" hidden>
+              <div class="profile-menu-header">
+                <span class="profile-menu-avatar">
+                  <i data-lucide="user-round" aria-hidden="true"></i>
+                </span>
+
+                <div>
+                  <strong>Centre Admin</strong>
+                  <span>centre.admin@ruralprocure.in</span>
+                </div>
+              </div>
+
+              <a href="#" class="profile-menu-item">
+                <i data-lucide="settings" aria-hidden="true"></i>
+                <span>Account Settings</span>
+              </a>
+
+              <button type="button" class="profile-menu-item logout-button">
+                <i data-lucide="log-out" aria-hidden="true"></i>
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <main class="dashboard-content queue-management-content">
+          <section class="queue-page-intro" aria-labelledby="queue-page-title">
+            <div>
+              <h1 id="queue-page-title">Today’s Live Queue</h1>
+
+              <p>
+                Manage farmer tokens and service progress for Krishnanagar
+                Centre.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              class="call-next-button"
+              id="call-next-button"
+              disabled
+            >
+              <i data-lucide="megaphone" aria-hidden="true"></i>
+              <span>Call Next Farmer</span>
+            </button>
+          </section>
+
+          <section class="queue-summary-grid" aria-label="Queue summary">
+            <article class="queue-summary-card">
+              <div class="queue-summary-icon waiting">
+                <i data-lucide="users" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <span>Waiting</span>
+                <strong id="waiting-count">0</strong>
+                <p>Farmers waiting in queue</p>
+              </div>
+            </article>
+
+            <article class="queue-summary-card">
+              <div class="queue-summary-icon serving">
+                <i data-lucide="user-check" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <span>Currently Serving</span>
+                <strong id="serving-count">0</strong>
+                <p>Farmer at procurement desk</p>
+              </div>
+            </article>
+
+            <article class="queue-summary-card">
+              <div class="queue-summary-icon completed">
+                <i data-lucide="circle-check-big" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <span>Completed Today</span>
+                <strong id="completed-count">0</strong>
+                <p>Farmers served today</p>
+              </div>
+            </article>
+
+            <article class="queue-summary-card">
+              <div class="queue-summary-icon average">
+                <i data-lucide="clock-3" aria-hidden="true"></i>
+              </div>
+
+              <div>
+                <span>Average Wait</span>
+
+                <strong>
+                  <span id="average-wait-time">0</span>
+                  <small>min</small>
+                </strong>
+
+                <p>Average waiting duration</p>
+              </div>
+            </article>
+          </section>
+          <section
+            class="current-service-card"
+            aria-labelledby="current-service-title"
+          >
+            <header class="current-service-header">
+              <div>
+                <h2 id="current-service-title">Current Service</h2>
+
+                <p>Farmer currently being served at the procurement desk.</p>
+              </div>
+
+              <span class="service-state idle" id="service-state"> Idle </span>
+            </header>
+
+            <div
+              class="current-service-content"
+              id="current-service-content"
+              aria-live="polite"
+            >
+              <div class="current-service-empty" id="current-service-empty">
+                <div class="current-service-empty-icon">
+                  <i data-lucide="user-round-x" aria-hidden="true"></i>
+                </div>
+
+                <div>
+                  <strong>No farmer is currently being served</strong>
+
+                  <p>
+                    Use “Call Next Farmer” to start serving the first waiting
+                    token.
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="current-service-details"
+                id="current-service-details"
+                hidden
+              >
+                <div class="current-token">
+                  <span>Current Token</span>
+                  <strong id="current-token-number">--</strong>
+                </div>
+
+                <dl class="current-farmer-information">
+                  <div>
+                    <dt>Farmer</dt>
+                    <dd id="current-farmer-name">--</dd>
+                  </div>
+
+                  <div>
+                    <dt>Booking ID</dt>
+                    <dd id="current-booking-id">--</dd>
+                  </div>
+
+                  <div>
+                    <dt>Time Slot</dt>
+                    <dd id="current-slot-time">--</dd>
+                  </div>
+
+                  <div>
+                    <dt>Crop</dt>
+                    <dd id="current-crop">--</dd>
+                  </div>
+
+                  <div>
+                    <dt>Service Started</dt>
+                    <dd id="current-service-time">--</dd>
+                  </div>
+                </dl>
+
+                <button
+                  type="button"
+                  class="complete-service-button"
+                  id="complete-service-button"
+                  disabled
+                >
+                  <i data-lucide="circle-check-big" aria-hidden="true"></i>
+                  <span>Complete Service</span>
+                </button>
+              </div>
+            </div>
+          </section>
+          <section
+            class="queue-list-card"
+            aria-labelledby="waiting-queue-title"
+          >
+            <header class="queue-list-header">
+              <div>
+                <h2 id="waiting-queue-title">Waiting Queue</h2>
+
+                <p>Farmers are served according to their token order.</p>
+              </div>
+
+              <span id="queue-total-badge">0 waiting</span>
+            </header>
+
+            <div class="queue-table-wrapper">
+              <table class="queue-table">
+                <caption class="visually-hidden">
+                  Farmers currently waiting for procurement service
+                </caption>
+
+                <thead>
+                  <tr>
+                    <th scope="col">Token</th>
+                    <th scope="col">Farmer</th>
+                    <th scope="col">Booking ID</th>
+                    <th scope="col">Check-in Time</th>
+                    <th scope="col">Time Slot</th>
+                    <th scope="col">Crop</th>
+                    <th scope="col">Waiting Time</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody id="queue-table-body">
+                  <tr>
+                    <td colspan="9">
+                      <div class="queue-empty-state">
+                        <i data-lucide="users" aria-hidden="true"></i>
+
+                        <strong>No farmers are waiting</strong>
+
+                        <p>
+                          Checked-in farmers will appear here with a queue
+                          token.
+                        </p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section
+            class="queue-list-card"
+            aria-labelledby="skipped-farmers-title"
+          >
+            <header class="queue-list-header">
+              <div>
+                <h2 id="skipped-farmers-title">Skipped Farmers</h2>
+
+                <p>Farmers skipped from the active waiting queue.</p>
+              </div>
+
+              <span id="skipped-total-badge">0 skipped</span>
+            </header>
+
+            <div class="queue-table-wrapper">
+              <table class="queue-table">
+                <caption class="visually-hidden">
+                  Farmers skipped from the waiting queue
+                </caption>
+
+                <thead>
+                  <tr>
+                    <th scope="col">Token</th>
+                    <th scope="col">Farmer</th>
+                    <th scope="col">Booking ID</th>
+                    <th scope="col">Skipped At</th>
+                    <th scope="col">Time Slot</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody id="skipped-table-body">
+                  <tr>
+                    <td colspan="7">
+                      <div class="queue-empty-state">
+                        <i data-lucide="users" aria-hidden="true"></i>
+
+                        <strong>No farmers have been skipped</strong>
+
+                        <p>Skipped farmers will appear here.</p>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+    <div
+      class="queue-toast"
+      id="queue-toast"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./queue-management.js"></script>
+  </body>
+</html>

@@ -1,0 +1,761 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>RuralProcure Dashboard</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="user-dashboard.css" />
+    <link rel="stylesheet" href="Pages/book-new-slot/book-new-slot.css" />
+  </head>
+
+  <body>
+    <!-- =====================================================
+     MOBILE HEADER
+====================================================== -->
+
+    <header class="mobile-header">
+      <!-- Logo -->
+      <div class="mobile-logo">
+        <div class="logo-circle small-logo">
+          <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <h2>RuralProcure</h2>
+      </div>
+
+      <!-- Mobile Header Actions -->
+      <div class="mobile-header-actions">
+        <!-- ================= MOBILE NOTIFICATION ================= -->
+
+        <div class="notification-wrapper">
+          <button
+            class="notification-btn"
+            id="mobileNotificationButton"
+            aria-label="Notifications"
+            type="button"
+          >
+            <i class="fa-regular fa-bell"></i>
+
+            <span class="notification-count" id="mobileNotificationCount">
+              3
+            </span>
+          </button>
+
+          <!-- Mobile Notification Dropdown -->
+          <div class="notification-dropdown" id="mobileNotificationDropdown">
+            <div class="notification-header">
+              <div>
+                <h3>Notifications</h3>
+
+                <span class="notification-header-text">
+                  3 new notifications
+                </span>
+              </div>
+
+              <button id="mobileMarkAllRead" type="button">
+                Mark all as read
+              </button>
+            </div>
+
+            <!-- Notification 1 -->
+            <div class="notification-item unread" data-notification-id="1">
+              <div class="notification-item-icon green-notification">
+                <i class="fa-regular fa-calendar-check"></i>
+              </div>
+
+              <div class="notification-content">
+                <h4>Slot A-42 confirmed</h4>
+
+                <p>
+                  Your procurement slot has been confirmed for 15 Sep 2026 at
+                  10:00 AM.
+                </p>
+
+                <span class="notification-time"> 5 minutes ago </span>
+              </div>
+
+              <span class="unread-dot"></span>
+            </div>
+
+            <!-- Notification 2 -->
+            <div class="notification-item unread" data-notification-id="2">
+              <div class="notification-item-icon blue-notification">
+                <i class="fa-solid fa-users"></i>
+              </div>
+
+              <div class="notification-content">
+                <h4>You're checked in</h4>
+
+                <p>
+                  You have successfully checked in at Krishnanagar Procurement
+                  Centre.
+                </p>
+
+                <span class="notification-time"> 20 minutes ago </span>
+              </div>
+
+              <span class="unread-dot"></span>
+            </div>
+
+            <!-- Notification 3 -->
+            <div class="notification-item unread" data-notification-id="3">
+              <div class="notification-item-icon yellow-notification">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+
+              <div class="notification-content">
+                <h4>Payment pending</h4>
+
+                <p>Your pending payment of ₹14,400 is awaiting processing.</p>
+
+                <span class="notification-time"> 1 hour ago </span>
+              </div>
+
+              <span class="unread-dot"></span>
+            </div>
+
+            <div class="notification-footer">
+              <button type="button" class="view-all-notifications">
+                View all notifications
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= MOBILE PROFILE ================= -->
+
+        <div class="mobile-profile-wrapper">
+          <button
+            class="mobile-profile-btn"
+            id="mobileProfileButton"
+            aria-label="Profile"
+            type="button"
+          >
+            <div class="mobile-profile-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+          </button>
+
+          <div class="mobile-profile-dropdown" id="mobileProfileDropdown">
+            <div>
+              <i class="fa-regular fa-user"></i>
+              My Profile
+            </div>
+
+            <div>
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </div>
+
+            <div>
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              Logout
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= MOBILE MENU ================= -->
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open menu"
+          type="button"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- =====================================================
+     SIDEBAR
+====================================================== -->
+
+    <aside class="sidebar" id="sidebar">
+      <!-- Logo -->
+
+      <div class="brand">
+        <div class="logo-circle">
+          <img src="../Images/logo.png" alt="RuralProcure Logo" />
+        </div>
+
+        <h1>RuralProcure</h1>
+
+        <p>Better Price. Better Future.</p>
+      </div>
+
+      <!-- Main Navigation -->
+
+      <nav class="navigation">
+        <a href="#" class="nav-item active" id="Home">
+          <i class="fa-solid fa-house"></i>
+          <span>Home</span>
+        </a>
+
+        <a href="#" class="nav-item" id="bookNewSlot">
+          <i class="fa-regular fa-calendar"></i>
+          <span>Book New Slot</span>
+        </a>
+
+        <a href="#" class="nav-item" id="myBookings">
+          <i class="fa-regular fa-clipboard"></i>
+          <span>My Bookings</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-users"></i>
+          <span>Live Queue</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+          <span>Payments</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="fa-regular fa-bell"></i>
+          <span>Notifications</span>
+        </a>
+      </nav>
+
+      <!-- Bottom Navigation -->
+
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-item">
+          <i class="fa-regular fa-circle-question"></i>
+          <span>Help & Support</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="fa-regular fa-circle-user"></i>
+          <span>Profile</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+    <main class="main-content" id="main-content">
+      <!-- =================================================
+         TOP BAR
+    ================================================== -->
+
+      <header class="topbar">
+        <div></div>
+
+        <div class="topbar-right">
+          <!-- ================= DESKTOP NOTIFICATION ================= -->
+
+          <div class="notification-wrapper">
+            <button
+              class="notification-btn"
+              id="notificationButton"
+              aria-label="Notifications"
+              type="button"
+            >
+              <i class="fa-regular fa-bell"></i>
+
+              <span class="notification-count" id="desktopNotificationCount">
+                3
+              </span>
+            </button>
+
+            <div class="notification-dropdown" id="notificationDropdown">
+              <div class="notification-header">
+                <div>
+                  <h3>Notifications</h3>
+
+                  <span class="notification-header-text">
+                    3 new notifications
+                  </span>
+                </div>
+
+                <button id="markAllRead" type="button">Mark all as read</button>
+              </div>
+
+              <!-- Notification 1 -->
+
+              <div class="notification-item unread" data-notification-id="1">
+                <div class="notification-item-icon green-notification">
+                  <i class="fa-regular fa-calendar-check"></i>
+                </div>
+
+                <div class="notification-content">
+                  <h4>Slot A-42 confirmed</h4>
+
+                  <p>
+                    Your procurement slot has been confirmed for 15 Sep 2026 at
+                    10:00 AM.
+                  </p>
+
+                  <span class="notification-time"> 5 minutes ago </span>
+                </div>
+
+                <span class="unread-dot"></span>
+              </div>
+
+              <!-- Notification 2 -->
+
+              <div class="notification-item unread" data-notification-id="2">
+                <div class="notification-item-icon blue-notification">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="notification-content">
+                  <h4>You're checked in</h4>
+
+                  <p>
+                    You have successfully checked in at Krishnanagar Procurement
+                    Centre.
+                  </p>
+
+                  <span class="notification-time"> 20 minutes ago </span>
+                </div>
+
+                <span class="unread-dot"></span>
+              </div>
+
+              <!-- Notification 3 -->
+
+              <div class="notification-item unread" data-notification-id="3">
+                <div class="notification-item-icon yellow-notification">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div class="notification-content">
+                  <h4>Payment pending</h4>
+
+                  <p>Your pending payment of ₹14,400 is awaiting processing.</p>
+
+                  <span class="notification-time"> 1 hour ago </span>
+                </div>
+
+                <span class="unread-dot"></span>
+              </div>
+
+              <div class="notification-footer">
+                <button type="button" id="viewAllNotifications">
+                  View all notifications
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PROFILE ================= -->
+
+          <button class="profile-btn" id="profileButton" type="button">
+            <div class="profile-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <span>Ramesh Kumar</span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <!-- Profile Dropdown -->
+
+        <div class="profile-dropdown" id="profileDropdown">
+          <div>
+            <i class="fa-regular fa-user"></i>
+            My Profile
+          </div>
+
+          <div>
+            <i class="fa-solid fa-gear"></i>
+            Settings
+          </div>
+
+          <div>
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Logout
+          </div>
+        </div>
+      </header>
+
+      <!-- =================================================
+         DASHBOARD
+    ================================================== -->
+
+      <section class="dashboard" id="user-dashboard">
+        <!-- ================= WELCOME + STATS ================= -->
+
+        <div class="welcome-row">
+          <div class="welcome">
+            <h2>
+              Good morning, Ramesh!
+              <span>👋</span>
+            </h2>
+
+            <p>Here's what's happening with your procurement.</p>
+          </div>
+
+          <!-- QUICK ACTIONS -->
+
+          <section class="quick-actions card">
+            <div class="quick-title">QUICK ACTIONS</div>
+
+            <div class="quick-grid">
+              <button class="quick-card quick-green" type="button">
+                <div class="quick-icon">
+                  <i class="fa-regular fa-calendar"></i>
+                </div>
+
+                <div class="quick-text" id="bookNewSlot">
+                  <h3>Book New Slot</h3>
+                  <p>Book a new slot for your produce</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+
+              <button class="quick-card quick-blue" type="button">
+                <div class="quick-icon">
+                  <i class="fa-regular fa-clipboard"></i>
+                </div>
+
+                <div class="quick-text">
+                  <h3>My Bookings</h3>
+                  <p>View all your bookings</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+
+              <button class="quick-card quick-yellow" type="button">
+                <div class="quick-icon">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div class="quick-text">
+                  <h3>Payments</h3>
+                  <p>View payment history and status</p>
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================= FIRST ROW ================= -->
+
+        <div class="dashboard-grid">
+          <!-- NEXT BOOKING -->
+
+          <section class="card booking-card">
+            <div class="card-header">
+              <h3>YOUR NEXT BOOKING</h3>
+            </div>
+
+            <div class="booking-content">
+              <div class="crop-icon">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+
+              <div class="booking-details">
+                <h2>Paddy</h2>
+
+                <div class="detail">
+                  <i class="fa-regular fa-calendar"></i>
+
+                  <span> 15 Sep 2026 (Tue) </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-regular fa-clock"></i>
+
+                  <span> 10:00 AM – 10:30 AM </span>
+                </div>
+
+                <div class="detail">
+                  <i class="fa-solid fa-location-dot"></i>
+
+                  <span>
+                    Krishnanagar Procurement Centre
+                    <small> Nadia, West Bengal </small>
+                  </span>
+                </div>
+              </div>
+
+              <div class="confirmed">
+                Confirmed
+
+                <i class="fa-solid fa-check"></i>
+              </div>
+            </div>
+
+            <!-- Token -->
+
+            <div class="token-area">
+              <div class="token-label">Token Number</div>
+
+              <div class="token-number">A-42</div>
+            </div>
+
+            <!-- Buttons -->
+
+            <div class="booking-buttons">
+              <button class="outline-btn" id="viewBooking" type="button">
+                <i class="fa-regular fa-clipboard"></i>
+
+                View Booking
+              </button>
+
+              <button class="primary-btn" id="viewQueue" type="button">
+                <i class="fa-solid fa-users"></i>
+
+                View Live Queue
+              </button>
+            </div>
+          </section>
+
+          <!-- LIVE QUEUE -->
+
+          <section class="card queue-card">
+            <div class="card-header">
+              <h3>
+                <i class="fa-solid fa-users"></i>
+
+                LIVE QUEUE
+              </h3>
+            </div>
+
+            <div class="queue-content">
+              <div class="queue-row">
+                <span>Your Token</span>
+
+                <strong class="green-text"> A-42 </strong>
+              </div>
+
+              <div class="queue-row">
+                <span>Currently Serving</span>
+
+                <strong> A-39 </strong>
+              </div>
+
+              <div class="queue-row">
+                <span>People Ahead of You</span>
+
+                <strong id="peopleAheadValue"> 2 </strong>
+              </div>
+
+              <div class="queue-row">
+                <span>Estimated Wait Time</span>
+
+                <strong class="green-text"> ~15 min </strong>
+              </div>
+
+              <button class="queue-button" id="queueButton" type="button">
+                View Live Queue
+
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <!-- PROCUREMENT STATUS -->
+
+          <section class="card status-card">
+            <div class="card-header">
+              <h3>PROCUREMENT STATUS</h3>
+            </div>
+
+            <div class="status-content">
+              <div class="timeline">
+                <!-- Booked -->
+
+                <div class="status-step completed">
+                  <div class="status-circle">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+
+                  <h4>Booked</h4>
+
+                  <p>15 Sep, 9:15 AM</p>
+                </div>
+
+                <!-- Checked In -->
+
+                <div class="status-step completed">
+                  <div class="status-circle">
+                    <i class="fa-solid fa-check"></i>
+                  </div>
+
+                  <h4>Checked In</h4>
+
+                  <p>15 Sep, 9:58 AM</p>
+                </div>
+
+                <!-- Procurement -->
+
+                <div class="status-step current">
+                  <div class="status-circle">
+                    <i class="fa-solid fa-truck"></i>
+                  </div>
+
+                  <h4>Procurement</h4>
+
+                  <p class="green-text">In Progress</p>
+                </div>
+
+                <!-- Payment -->
+
+                <div class="status-step">
+                  <div class="status-circle payment-circle">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                  </div>
+
+                  <h4>Payment</h4>
+
+                  <p>Pending</p>
+                </div>
+              </div>
+
+              <div class="info-message">
+                <i class="fa-regular fa-circle-info"></i>
+
+                <span>
+                  Your produce is being procured. Please wait for your token to
+                  be called.
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <!-- RECENT ACTIVITY -->
+
+          <section class="card activity-card">
+            <div class="card-header activity-header">
+              <h3>RECENT ACTIVITY</h3>
+
+              <a href="#"> View All </a>
+            </div>
+
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon green-light">
+                  <i class="fa-regular fa-calendar"></i>
+                </div>
+
+                <div>
+                  <h4>Slot A-42 confirmed</h4>
+
+                  <p>15 Sep 2026, 9:15 AM</p>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon blue-light">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                  <h4>Checked in at centre</h4>
+
+                  <p>15 Sep 2026, 9:58 AM</p>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon yellow-light">
+                  <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+                  <h4>Previous payment received</h4>
+
+                  <p>08 Sep 2026, 04:30 PM</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================= STATISTICS ================= -->
+
+<div class="stats-card">
+
+  <div class="stat">
+
+    <div class="stat-icon green-light">
+      <i class="fa-regular fa-calendar"></i>
+    </div>
+
+    <div>
+      <p>Upcoming Booking</p>
+      <strong>1</strong>
+    </div>
+
+  </div>
+
+
+  <div class="stat-divider"></div>
+
+
+  <div class="stat">
+
+    <div class="stat-icon green-light">
+      <i class="fa-regular fa-circle-check"></i>
+    </div>
+
+    <div>
+      <p>Completed</p>
+      <strong>4</strong>
+    </div>
+
+  </div>
+
+
+  <div class="stat-divider"></div>
+
+
+  <div class="stat">
+
+    <div class="stat-icon yellow-light">
+      <i class="fa-solid fa-indian-rupee-sign"></i>
+    </div>
+
+    <div>
+      <p>Pending Payment</p>
+      <strong>₹14,400</strong>
+    </div>
+
+  </div>
+
+</div>
+      </section>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="user-dashboard.js"></script>
+  </body>
+</html>

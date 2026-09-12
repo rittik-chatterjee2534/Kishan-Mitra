@@ -41,7 +41,7 @@
     hidden.addEventListener('input', paint);
     paint();
 
-    /* --- "We have sent an OTP to +91 ..." line --- */
+
     const note = () => {
         if (!sentNote || !mobile) return;
         const v = mobile.value.trim();
@@ -53,7 +53,6 @@
     sendBtn && sendBtn.addEventListener('click', () => setTimeout(note, 500));
     note();
 
-    /* --- Resend cooldown (re-uses the existing Send OTP handler) --- */
     let tick = null;
     const startTimer = (seconds) => {
         if (!resend) return;

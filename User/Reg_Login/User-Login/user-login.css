@@ -527,7 +527,6 @@ a {
     font-size: .9rem;
 }
 
-/* ---------- OTP : six boxes ---------- */
 .otp-row {
     display: flex;
     align-items: center;
@@ -604,7 +603,6 @@ a {
 }
 
 
-/* ---------- submit ---------- */
 .submit-btn {
     width: 100%;
     height: clamp(42px, 5.8vh, 50px);

@@ -2,7 +2,8 @@
 
 :root {
   --primary-green: #15803d;
-  --primary-green-hover: #116b34;
+  --primary-green-hover: #116a33;
+  --head-text: #ffa500;
   --dark-green: #064e3b;
   --sidebar-green: #055b43;
 
@@ -152,14 +153,18 @@ svg {
 .brand-text {
   display: flex;
   flex-direction: column;
-
   line-height: 1.25;
+}
+
+.brand-text .title-txt{
+  color: var(--head-text);
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .brand-text strong {
   color: var(--dark-green);
-
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
 }
 

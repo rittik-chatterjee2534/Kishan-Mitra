@@ -20,7 +20,8 @@
     --text-heading: #0f172a;
     --text-body: #334155;
     --text-muted: #64748b;
-    --border-color: #e2e8f0;
+    --border-color: #e6f0e2;
+    --otp-border-color: #49da11;
     --white: #ffffff;
     --radius: 10px;
     --radius-lg: 14px;
@@ -254,7 +255,7 @@ a {
 
 .step-card {
     margin-top: 2vh;
-    height: 72vh;
+    height: 80vh;
     width: 35vw;
     padding: 1.7vw;
     border: 1px solid var(--border-color);
@@ -350,6 +351,85 @@ a {
     color: var(--text-muted);
 }
 
+
+.otp-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: clamp(10px, 1.8vh, 16px);
+}
+
+.otp-boxes {
+    position: relative;
+    display: flex;
+    gap: 1vw;
+    margin-left: 4.3vw;
+    margin-bottom: 2vh;
+}
+
+.otp-box {
+    width: clamp(40px, 5.6vh, 52px);
+    height: clamp(44px, 6.4vh, 56px);
+    text-align: center;
+    font-size: clamp(1rem, 2.6vh, 1.25rem);
+    font-weight: 600;
+    color: var(--text-heading);
+    border: 2px solid var(--otp-border-color);
+    border-radius: var(--radius);
+    background: #fff;
+    outline: none;
+    transition: border-color .18s, box-shadow .18s;
+}
+
+.otp-box:focus {
+    border-color: var(--border-color); 
+    box-shadow: 0 0 0 3px rgba(21, 128, 61, .15);
+}
+
+.otp-box:valid {
+    border-color: #a7cfb5;
+}
+
+/* filled */
+.otp-box:invalid {
+    border-color: var(--border-color);
+}
+
+/* the value carrier for login.js — focusable, but invisible */
+.otp-hidden {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.resend {
+    border: none;
+    background: none;
+    padding: 6px 0;
+    font-size: clamp(.72rem, 1.7vh, .82rem);
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.resend:not(:disabled) {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.resend:disabled {
+    cursor: default;
+}
+
+
 .field-hint {
     margin-top: 3px;
     font-size: clamp(.66rem, 1.5vh, .76rem);
@@ -368,6 +448,7 @@ a {
     letter-spacing: .05em;
     text-transform: uppercase;
 }
+
 
 .field-select {
     position: relative;

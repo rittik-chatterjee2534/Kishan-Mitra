@@ -2,6 +2,7 @@
   --primary: #15803d;
   --primary-light: #22a447;
   --primary-dark: #064e3b;
+  --head-text: #ffa500;
 
   --sidebar-bg: #034d35;
   --sidebar-hover: rgba(255, 255, 255, 0.1);
@@ -121,10 +122,9 @@ ul {
 }
 
 .sidebar-logo {
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   flex-shrink: 0;
-
   object-fit: cover;
   background-color: var(--white);
   border: 2px solid rgba(255, 255, 255, 0.75);
@@ -134,17 +134,24 @@ ul {
 }
 
 .brand-details {
-  min-width: 0;
+  width: 20vw;
 }
 
 .brand-details h1 {
-  font-size: 18px;
-  line-height: 1.2;
+  display: flex;
+  font-size: 1.7rem;
+  /* line-height: 1.2; */
   font-weight: 700;
   color: var(--white);
 }
 
-.brand-details span {
+.brand-details .head-text{
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--head-text);
+}
+
+.brand-details p {
   display: block;
   margin-top: 4px;
 

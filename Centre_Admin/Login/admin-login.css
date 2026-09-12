@@ -2,6 +2,7 @@
   --primary-dark: #083b27;
   --primary: #15803d;
   --primary-light: #22a447;
+  --head-text: #ffa500;
   --soft-green: #eaf6ec;
   --pale-green: #f3f8f2;
 
@@ -74,7 +75,7 @@ body {
       rgba(246, 250, 240, 0.16) 67%,
       rgba(7, 65, 27, 0.08) 100%
     ),
-    url("../../Images/ruralprocure-logo.png");
+    url("../../Images/kisan_mitra.png");
   background-size: cover;
   background-position: 60% bottom;
   background-repeat: no-repeat;
@@ -108,11 +109,11 @@ body {
   font-size: 38px;
   font-weight: 700;
   line-height: 1.1;
-  color: var(--heading);
+  color: var(--primary-dark);
 }
 
-.brand-text h1 span {
-  color: var(--primary);
+.brand-text h1 .head-text{
+  color: var(--head-text);
 }
 
 .brand-text p {
